@@ -1,1 +1,1 @@
-var sayHi = 'Hi'
+var sayHi = 'Hi';
