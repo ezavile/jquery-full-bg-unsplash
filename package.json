@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint src",
     "pretest": "npm run lint",
-    "test": "mocha",
+    "test": "nyc mocha",
     "test:watch": "mocha --watch"
   },
   "repository": {
@@ -33,6 +33,22 @@
     "jquery": "3.3.0",
     "jsdom": "11.5.1",
     "jsdom-global": "3.0.2",
-    "mocha": "5.0.0"
+    "mocha": "5.0.0",
+    "nyc": "11.4.1",
+    "pre-commit": "1.2.2"
+  },
+  "pre-commit": [
+    "test"
+  ],
+  "nyc": {
+    "check-coverage": true,
+    "branches": 100,
+    "functions": 100,
+    "lines": 100,
+    "statements": 100,
+    "reporter": [
+      "text",
+      "lcov"
+    ]
   }
 }
