@@ -1,2 +1,2 @@
-# jq-full-bg-unsplash
-jQuery plugin to put a full background random from unsplash
+# jquery-full-bg-unsplash
+jQuery plugin to change a full background image from unsplash

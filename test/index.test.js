@@ -9,7 +9,7 @@ var clientId = process.env.CLIENT_ID;
 require('jsdom-global')();
 require('../src');
 
-describe('jq-full-bg-unsplash', function() {
+describe('jquery-full-bg-unsplash', function() {
   beforeEach(function() {
     window.FullBgUnsplash.setup(clientId);
   });
