@@ -1,6 +1,6 @@
 {
   "name": "jquery-full-bg-unsplash",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "jQuery plugin to put a full background random from unsplash",
   "main": "dist/index.js",
   "scripts": {

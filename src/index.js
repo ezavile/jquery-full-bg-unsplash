@@ -1,6 +1,6 @@
 /**
  * Full Bg Unsplash
- * @version 0.0.0-development
+ * @version 1.0.0
  * @author Edgar Zavala
  * @license The MIT License (MIT)
  */
