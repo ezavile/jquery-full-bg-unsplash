@@ -2,12 +2,14 @@
   "name": "jquery-full-bg-unsplash",
   "version": "0.0.0-development",
   "description": "jQuery plugin to put a full background random from unsplash",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "lint": "eslint src",
     "pretest": "npm run lint",
     "test": "nyc mocha",
-    "test:watch": "mocha --watch"
+    "test:watch": "mocha --watch",
+    "prebuild": "rimraf dist",
+    "build": "cpx src/index.js dist/"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,7 @@
   "homepage": "https://github.com/ezavile/jquery-full-bg-unsplash#readme",
   "devDependencies": {
     "chai": "4.1.2",
+    "cpx": "1.5.0",
     "dotenv": "4.0.0",
     "eslint": "4.15.0",
     "jquery": "3.3.0",
@@ -36,6 +39,7 @@
     "mocha": "5.0.0",
     "nyc": "11.4.1",
     "pre-commit": "1.2.2",
+    "rimraf": "2.6.2",
     "sinon": "4.2.1"
   },
   "pre-commit": [
@@ -51,5 +55,8 @@
       "text",
       "lcov"
     ]
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
