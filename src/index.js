@@ -1,6 +1,6 @@
 /**
  * Full Bg Unsplash
- * @version 1.0.1
+ * @version 1.0.2
  * @author Edgar Zavala
  * @license The MIT License (MIT)
  */
@@ -22,7 +22,7 @@
   FullBgUnsplash.prototype.getRandomPhoto = function(orientation) {
     return (
       $.ajax({
-        url: this.apiUrl + 'photo/random',
+        url: this.apiUrl + 'photos/random/',
         data: {orientation: orientation || 'landscape'}
       })
     );
@@ -31,7 +31,7 @@
   FullBgUnsplash.prototype.getPhotoByKeyword = function(orientation, keyword) {
     return (
       $.ajax({
-        url: this.apiUrl + 'photo/random',
+        url: this.apiUrl + 'search/photos/',
         data: {
           orientation: orientation || 'landscape',
           query: keyword,
