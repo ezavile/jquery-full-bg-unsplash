@@ -1,0 +1,64 @@
+{
+  "name": "jquery-full-bg-unsplash",
+  "version": "1.0.0",
+  "description": "jQuery plugin to put a full background random from unsplash",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "eslint src",
+    "pretest": "npm run lint",
+    "test": "nyc mocha",
+    "test:watch": "mocha --watch",
+    "prebuild": "rimraf dist",
+    "build": "cpx src/index.js dist/",
+    "report-coverage": "cat ./coverage/lcov.info | codecov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ezavile/jquery-full-bg-unsplash.git"
+  },
+  "keywords": [
+    "jquery",
+    "plugin",
+    "cover",
+    "full-page",
+    "unsplash"
+  ],
+  "author": "Edgar Zavala <ezavile@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ezavile/jquery-full-bg-unsplash/issues"
+  },
+  "homepage": "https://github.com/ezavile/jquery-full-bg-unsplash#readme",
+  "devDependencies": {
+    "chai": "4.1.2",
+    "codecov": "3.0.0",
+    "cpx": "1.5.0",
+    "dotenv": "4.0.0",
+    "eslint": "4.15.0",
+    "jquery": "3.3.0",
+    "jsdom": "11.5.1",
+    "jsdom-global": "3.0.2",
+    "mocha": "5.0.0",
+    "nyc": "11.4.1",
+    "pre-commit": "1.2.2",
+    "rimraf": "2.6.2",
+    "sinon": "4.2.1"
+  },
+  "pre-commit": [
+    "test"
+  ],
+  "nyc": {
+    "check-coverage": true,
+    "branches": 100,
+    "functions": 100,
+    "lines": 100,
+    "statements": 100,
+    "reporter": [
+      "text",
+      "lcov"
+    ]
+  },
+  "files": [
+    "dist"
+  ]
+}
