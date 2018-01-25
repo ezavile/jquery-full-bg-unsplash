@@ -8,7 +8,7 @@
 (function(global, $) {
 
   function FullBgUnsplash() {
-    this.apiUrl = 'https://api.unsplash.com/photos';
+    this.apiUrl = 'https://api.unsplash.com/';
   }
 
   FullBgUnsplash.prototype.setup = function(clientId) {
@@ -22,8 +22,22 @@
   FullBgUnsplash.prototype.getRandomPhoto = function(orientation) {
     return (
       $.ajax({
-        url: this.apiUrl + '/random',
+        url: this.apiUrl + 'photo/random',
         data: {orientation: orientation || 'landscape'}
+      })
+    );
+  };
+
+  FullBgUnsplash.prototype.getPhotoByKeyword = function(orientation, keyword) {
+    return (
+      $.ajax({
+        url: this.apiUrl + 'photo/random',
+        data: {
+          orientation: orientation || 'landscape',
+          query: keyword,
+          page: 1,
+          per_page: 1
+        }
       })
     );
   };
@@ -45,6 +59,21 @@
         .done(function(photo) {
           self.css({
             backgroundImage: 'url(' + photo.urls.regular + ')',
+          });
+          deferred.resolve(self);
+        })
+        .fail(function() {
+          self.css({
+            backgroundImage: 'url(' + options.backgroundImage + ')',
+          });
+          deferred.reject(self);
+        });
+    } else if (options.keyword) {
+      global.FullBgUnsplash
+        .getPhotoByKeyword(options.orientation, options.keyword)
+        .done(function(photos) {
+          self.css({
+            backgroundImage: 'url(' + photos.results[0].urls.regular + ')',
           });
           deferred.resolve(self);
         })

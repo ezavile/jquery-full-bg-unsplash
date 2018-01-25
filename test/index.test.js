@@ -48,12 +48,6 @@ describe('jquery-full-bg-unsplash', function() {
     beforeEach(function() {
       options = {};
       options.backgroundImage = 'path/image.jpg';
-      successResponse = function() {
-        var d = $.Deferred();
-        d.resolve({urls: { regular: imageFromUnsplash}});
-        return d.promise();
-      };
-
       errorResponse = function() {
         var d = $.Deferred();
         d.reject();
@@ -64,6 +58,44 @@ describe('jquery-full-bg-unsplash', function() {
     describe('when it is a random image', function() {
       beforeEach(function() {
         options.by = 'random';
+        successResponse = function() {
+          var d = $.Deferred();
+          d.resolve({
+            urls: {
+              regular: imageFromUnsplash
+            }
+          });
+          return d.promise();
+        };
+      });
+      it('should set an image as full page background', function() {
+        ajaxStub.returns(successResponse());
+        return $('#bg').FullBgUnsplash(options)
+          .then(function($this){
+            expect($this.css('backgroundImage')).to.contain(imageFromUnsplash);
+          });
+      });
+      it('should set the default image when fails', function() {
+        ajaxStub.returns(errorResponse());
+        return $('#bg').FullBgUnsplash(options)
+          .catch(function($this) {
+            expect($this.css('backgroundImage')).to.contain(imageByDefault);
+          });
+      });
+    });
+    describe('when it is an image by keyword', function() {
+      beforeEach(function() {
+        options.keyword = 'dog';
+        successResponse = function() {
+          var d = $.Deferred();
+          d.resolve({
+            results: [{
+              urls: { regular: imageFromUnsplash
+              }
+            }]
+          });
+          return d.promise();
+        };
       });
       it('should set an image as full page background', function() {
         ajaxStub.returns(successResponse());
