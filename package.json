@@ -1,0 +1,26 @@
+{
+  "name": "jquery-full-bg-unsplash",
+  "version": "0.1.0-development",
+  "description": "jQuery plugin to put a full background random from unsplash",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ezavile/jquery-full-bg-unsplash.git"
+  },
+  "keywords": [
+    "jquery",
+    "unsplash",
+    "full",
+    "background",
+    "plugin"
+  ],
+  "author": "Edgar Zavala <ezavile@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ezavile/jquery-full-bg-unsplash/issues"
+  },
+  "homepage": "https://github.com/ezavile/jquery-full-bg-unsplash#readme"
+}
