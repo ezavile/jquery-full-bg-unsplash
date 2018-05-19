@@ -1,6 +1,6 @@
 /**
  * jquery-full-bg-unsplash
- * @version 0.1.0-development
+ * @version 0.1.0
  * @author Edgar Zavala
  * @license The MIT License (MIT)
 */

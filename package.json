@@ -1,8 +1,8 @@
 {
   "name": "jquery-full-bg-unsplash",
-  "version": "0.1.0-development",
+  "version": "0.1.0",
   "description": "jQuery plugin to put a full background random from unsplash",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
